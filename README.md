@@ -14,4 +14,5 @@ Typecho版本的通过手机号注册用户的插件
 
 #### 与我联系：
 作者：二呆<br />
-网站：http://www.tongleer.com
+网站：http://www.tongleer.com<br />
+Github：https://github.com/muzishanshi/UserRegByPhone
