@@ -19,6 +19,11 @@ class UserRegByPhone_Plugin implements Typecho_Plugin_Interface
 		//恢复原注册页面
 		if(copy(dirname(__FILE__).'/register.php',dirname(__FILE__).'/../../../'.substr(__TYPECHO_ADMIN_DIR__,1,count(__TYPECHO_ADMIN_DIR__)-2).'/register.php')){
 		}
+		//删除页面模板
+		$db = Typecho_Db::get();
+		$queryTheme= $db->select('value')->from('table.options')->where('name = ?', 'theme'); 
+		$rowTheme = $db->fetchRow($queryTheme);
+		@unlink(dirname(__FILE__).'/../../themes/'.$rowTheme['value'].'/page_regbysms.php');
         return _t('插件已被禁用');
     }
 
